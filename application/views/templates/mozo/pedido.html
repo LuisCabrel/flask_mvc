@@ -1,0 +1,37 @@
+{% extends '././base.html' %}
+
+{% block body %}
+
+ <!--mensajes de alerta-->
+{% with messages = get_flashed_messages() %} <!--guardamos en la variable messages los mensages guardados de flash-->
+{% if messages %}
+{% for message in messages%}
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>{{message}}</strong><p>{{message.info}}</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+    {% endfor%}
+{% endif %}
+{% endwith %}
+<div class="row p-4">
+   
+    <div class="col-md-4  mx-auto">
+         
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h3>pedido</h3>
+            </div>
+            <div class="card-body">
+                <!--formulario-->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
